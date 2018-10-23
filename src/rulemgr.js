@@ -282,6 +282,7 @@ class RuleMgr {
 
     const headerRules = rule.headerRules || [];
 
+
     dataList.forEach((data = {}, index = 0) => {
       const json = {};
       let action = (headerRules.length > 0) ? 'success' : '';
@@ -289,7 +290,7 @@ class RuleMgr {
         const headerRule = headerRules[j] || {};
 
         const tmpAction = RuleMgr.parserHeaderRule(headerRule, json, data, index);
-        action = (action === '' || action === 'success') ? tmpAction : action;
+        action = (action === '' || action === 'success' || tmpAction === 'fail') ? tmpAction : action;
         if (action === 'fail') {
           break;
         }
