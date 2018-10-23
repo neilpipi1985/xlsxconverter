@@ -1,0 +1,6 @@
+.DS_Store
+data
+dev
+dist
+node_modules
+npm-debug.log
