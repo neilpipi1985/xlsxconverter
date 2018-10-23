@@ -6,8 +6,8 @@ XLSX Converter is Application of to Parse and Transfer Data between the Import F
 
 - Download
 
-  - [OSX v1.1.0](https://drive.google.com/open?id=17-hJEo4cHpomZ5_tuYco0A8Pu3ASXmEO)
-  - [Windows v1.1.0](https://drive.google.com/open?id=1dtOpI_qikminM0J-2S50SaMDd862y3Ry)
+  - [OSX v1.1.1](https://drive.google.com/open?id=1XxYR0M9KAZM5BNNwigP-dg0w58r-5xFL)
+  - [Windows v1.1.1](https://drive.google.com/open?id=1Q_8G0deTntjw-85CKKKJz2GSVNsxbTQC)
 
 - Build For [Source Code](https://github.com/neilpipi1985/xlsxconverter)
 

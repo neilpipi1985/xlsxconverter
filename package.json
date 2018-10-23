@@ -1,6 +1,6 @@
 {
   "name": "xlsxconverter",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "",
   "main": "./script/xlsxconverter_node_dev.js",
   "scripts": {
