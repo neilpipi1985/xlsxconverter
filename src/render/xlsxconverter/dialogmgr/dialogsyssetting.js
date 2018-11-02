@@ -100,7 +100,7 @@ class DialogSysSetting extends Component {
         if (!Number.isInteger(port)) {
           this.setState({
             disableBtn: false,
-            errorMessage: '網頁連接埠必須是正整數'
+            errorMessage: 'Port of Web Service must be a Number'
           });
         } else if (!isWindowsRender) {
           this.setState({ disableBtn: true });
@@ -116,7 +116,7 @@ class DialogSysSetting extends Component {
         } else if (distPath === '') {
           this.setState({
             disableBtn: false,
-            errorMessage: '請指定匯出路徑'
+            errorMessage: 'Please select the Export Path'
           });
         } else {
           this.setState({ disableBtn: true });
@@ -154,7 +154,7 @@ class DialogSysSetting extends Component {
 
     return (
       <Dialog open fullScreen={fullScreen} aria-labelledby="dialog-title">
-        <DialogTitle id="dialog-title">系統設定</DialogTitle>
+        <DialogTitle id="dialog-title">Systeim Setting</DialogTitle>
         <DialogContent>
           {
             (errorMessage !== '') ? <div style={{ margin: '5px 0', color: '#F44336' }}>{errorMessage}</div> : undefined
@@ -162,7 +162,7 @@ class DialogSysSetting extends Component {
           {
             (isWindowsRender) ? (
               <FormControl fullWidth>
-                <InputLabel>匯出路徑</InputLabel>
+                <InputLabel>Export Path</InputLabel>
                 <Input
                   disabled={disableBtn}
                   onClick={() => this.handleButtonClick({ action: 'setDistPath' })}
@@ -175,7 +175,7 @@ class DialogSysSetting extends Component {
             control={
               <Checkbox checked={enableWebService} onChange={(e) => { this.setState({ enableWebService: e.target.checked }); }} />
             }
-            label="網頁伺服器"
+            label="Enable Web Service"
           />
           {
             (enableWebService) ? (
@@ -183,7 +183,7 @@ class DialogSysSetting extends Component {
                 control={
                   <Checkbox checked={enableWebPwd} onChange={(e) => { this.setState({ enableWebPwd: e.target.checked }); }} />
                 }
-                label="啟動網頁密碼"
+                label="Enable Password"
               />
             ) : undefined
           }
@@ -192,7 +192,7 @@ class DialogSysSetting extends Component {
               <TextField
                 disabled={disableBtn}
                 fullWidth
-                label="網頁登入密碼"
+                label="Password"
                 value={webPwd}
                 onChange={e => this.setState({ webPwd: e.target.value })}
               />
@@ -204,7 +204,7 @@ class DialogSysSetting extends Component {
                 disabled={disableBtn}
                 fullWidth
                 type="number"
-                label="網頁連接埠"
+                label="Port of Web Service"
                 value={webServicePort}
                 onChange={e => this.setState({ webServicePort: e.target.value })}
               />
@@ -213,9 +213,9 @@ class DialogSysSetting extends Component {
         </DialogContent>
         <DialogActions>
           {
-            (!(isWindowsRender && distPath === '')) ? <Button disabled={disableBtn} onClick={() => this.handleButtonClick({ action: 'close' })} color="secondary">取消</Button> : undefined
+            (!(isWindowsRender && distPath === '')) ? <Button disabled={disableBtn} onClick={() => this.handleButtonClick({ action: 'close' })} color="secondary">Cancel</Button> : undefined
           }
-          <Button disabled={disableBtn} onClick={() => this.handleButtonClick({ action: 'setSysSetting' })} color="primary" autoFocus>送出</Button>
+          <Button disabled={disableBtn} onClick={() => this.handleButtonClick({ action: 'setSysSetting' })} color="primary" autoFocus>Confirm</Button>
         </DialogActions>
       </Dialog>
     );

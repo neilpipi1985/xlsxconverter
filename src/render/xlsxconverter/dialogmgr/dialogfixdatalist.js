@@ -39,7 +39,9 @@ class DialogFixDataList extends Component {
     const size = newProps.size || {};
     const data = newProps.data || {};
 
-    const newState = {};
+    const newState = {
+      isWindowsRender: newProps.isWindowsRender || false
+    };
 
     if (oldSize.width !== size.width || oldSize.height !== size.height) {
       const width = (size.width || 240);
@@ -161,6 +163,7 @@ class DialogFixDataList extends Component {
       onClickCallback
     } = this.props;
     const {
+      isWindowsRender,
       fileName,
       sheetName,
       dataList,
@@ -229,6 +232,7 @@ class DialogFixDataList extends Component {
           }
         }
         onClickCallback({
+          isWindowsRender,
           action: opts.action,
           fileName,
           sheetName,
